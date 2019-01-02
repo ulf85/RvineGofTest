@@ -18,12 +18,13 @@ desired properties of the new tests in high dimensions.
 The used R code for the Monte Carlo simulations in the Vine Copula part are given in this repo.
 The used MATLAB code for the copula part can be requested from Yajing Zhu.
 
-The code heavily builds on functionality from the **VineCopula package** ([CRAN](https://cran.r-project.org/web/packages/VineCopula/index.html), [github](https://github.com/ulf85/VineCopula)), in particular on the functions `RVineHessian` and `RVineGradient`.
+The code heavily builds on functionality from the **VineCopula package** ([CRAN](https://cran.r-project.org/web/packages/VineCopula/index.html), [github](https://github.com/ulf85/VineCopula)), in particular on the functions `RVineHessian()` and `RVineGrad()`
+(see [RVineHessian.Rd](https://github.com/ulf85/VineCopula/blob/master/man/RVineHessian.Rd) and [RVineGrad.Rd](https://github.com/ulf85/VineCopula/blob/master/man/RVineGrad.Rd)).
 
 ## RVineGofTest_new.R
 
 Since the code is not finally cleaned and brushed for a package or to be part of the VineCopula package the file naming and function names are quite lazily chosen. Sorry for that.  
-Nevertheless, this file includes the main function `RVineGofTest_new2()`, which calculated the test statistics for various goodness-of-fit test developed in the paper. The function is inspired by the RVineGofTest function of the VineCopula package having also its argument names. The different goodness-of-fit (GOF) tests are referred by the `method` argument:
+Nevertheless, this file includes the main function `RVineGofTest_new2()`, which calculated the test statistics for various goodness-of-fit test developed in the paper. The function is inspired by the `RVineGofTest` function of the VineCopula package having also its argument names. The different goodness-of-fit (GOF) tests are referred by the `method` argument:
 
 + "White2" = Determinant White Test
 + "White3" = Trace White Test
