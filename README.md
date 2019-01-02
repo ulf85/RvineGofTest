@@ -18,12 +18,12 @@ desired properties of the new tests in high dimensions.
 The used R code for the Monte Carlo simulations in the Vine Copula part are given in this repo.
 The used MATLAB code for the copula part can be requested from Yajing Zhu.
 
-The code heavily builds on functionality from the **VineCopula package** ([CRAN](https://cran.r-project.org/web/packages/VineCopula/index.html), [github](https://github.com/ulf85/VineCopula)), inparticular on the functions _RVineHessian_ and _RVineGradient_.
+The code heavily builds on functionality from the **VineCopula package** ([CRAN](https://cran.r-project.org/web/packages/VineCopula/index.html), [github](https://github.com/ulf85/VineCopula)), in particular on the functions `RVineHessian` and `RVineGradient`.
 
 ## RVineGofTest_new.R
 
-Since the code is not finally cleand and brushed for a package or to be part of the VineCopula package the file naming is quite lazy. Sorry for that.  
-Nevertheless, this file inclued the main function RVineGofTest_new2, which calculated the test statistics for various goodness-of-fit test developed in the paper. The function is inspired by the RVineGofTest function of the VineCopula package having alos its argument names. The different goones-of-fit (GOF) tests are refered by the method argument:
+Since the code is not finally cleaned and brushed for a package or to be part of the VineCopula package the file naming and function names are quite lazily chosen. Sorry for that.  
+Nevertheless, this file includes the main function `RVineGofTest_new2()`, which calculated the test statistics for various goodness-of-fit test developed in the paper. The function is inspired by the RVineGofTest function of the VineCopula package having also its argument names. The different goodness-of-fit (GOF) tests are referred by the `method` argument:
 
 + "White2" = Determinant White Test
 + "White3" = Trace White Test
@@ -40,19 +40,20 @@ see correctTestStatistic()
 
 ## correctTestStatistic.R
 
-The test statistics we get from RVineGofTest_new are only a preliminary 
+The test statistics we get from `RVineGofTest_new2()` are only a preliminary 
 stage of the test statistics. They have to be corrected with the variance
 (covariance matrix).
 
-In this file we have the function _correctTestStatistic()_ with some sub-functions to do the "correction".
+In this file we have the function `correctTestStatistic()` with some sub-functions to do the "correction".
 As input we assume a vector (or in some cases a matrix) of test statistics from a Bootstrap or Monte Carlo run.
 
 ## sizePower.R
 
 Given the corrected test statistics we can approximate the p-value by Bootstrapping.
 Given these (or asymptotic p-values) we can calculate the empirical size and power of the tests.  
-Again we assume as input a vector (or in some cases a matrix) of test statistics.
+We assume as input for the function `sizePower()` two vectors (or in some cases a matrices) of test statistics.
+One for the true model (size) and one for the alternative (power).
 
 ## alternativeVineCopulaModels.R
 
-In this file we give the code for the alternative Vine Copula models used in the paper for the Monte Carlo simulation. In the paper an R-vine is defined. The structure, the copula families and copula parameters are stored in an RVM object of the VineCOpula package. Based on that RVM we can select and estimate the alternative Vine Copula models, namely a C-vine, a D-vine and an R-vine with just Gaussian copulas, i.e. a multivariate Gauss copula.
+In this file we give the code for the alternative Vine Copula models used in the paper for the Monte Carlo simulation. In the paper an R-vine is defined. The structure, the copula families and copula parameters are stored in an `RVM` object of the VineCopula package. Based on that `RVM` we can select and estimate the alternative Vine Copula models, namely a C-vine, a D-vine and an R-vine with just Gaussian copulas, i.e. a multivariate Gauss copula.
