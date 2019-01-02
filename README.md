@@ -1,6 +1,8 @@
 # R Code for "Generalized Information Matrix Tests for Copulas"
 In this repository I publish my **R code** for the paper **"Generalized Information Matrix Tests for Copulas"** written with my colleagues Artem Prokhorov and Yajing Zhu (not yet published but accepted in Econometric Reviews).
 
+A copy is available on my [researchgate](https://www.researchgate.net/publication/299641789_Generalized_Information_Matrix_Tests_for_Copulas) page.
+
 In this paper we propose a family of goodness-of-fit tests for copulas. The tests use generalizations of the information matrix (IM) equality of White (1982).
 The idea is that eigenspectrum-based statements of the IM equality reduce the degrees
 of freedom of the test’s asymptotic distribution and lead to better size-power
